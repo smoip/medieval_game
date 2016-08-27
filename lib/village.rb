@@ -4,7 +4,6 @@ class Village < Site
   attr_accessor :citizens, :council
   attr_accessor :stockpile, :fields
   attr_accessor :shire
-  attr_accessor :comm_range
 
   def initialize(map, coordinates)
     super
