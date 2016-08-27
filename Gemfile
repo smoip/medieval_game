@@ -6,7 +6,7 @@ group :development, :test do
   gem 'pry-byebug', :require => false
   gem 'rubocop', :require => false
   gem 'byebug', :require => false
-  gem 'mocha', :require => false
+  gem 'factory_girl'
 
   gem 'autotest-standalone'
   gem 'autotest-growl'

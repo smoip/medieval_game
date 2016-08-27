@@ -1,24 +1,23 @@
-class Village
-  attr_accessor :population, :defense_rating, :offense_rating
+require 'site'
+
+class Village < Site
   attr_accessor :citizens, :council
-  attr_accessor :structures, :stockpile, :fields
-  attr_accessor :neighbors, :shire
+  attr_accessor :stockpile, :fields
+  attr_accessor :shire
+  attr_accessor :comm_range
 
-  def initialize
-    @population     = 0
-    @defense_rating = 0
-    @offense_rating = 0
-
+  def initialize(map, coordinates)
+    super
     @citizens       = []
     @council        = []
 
-    @structures     = []
     @stockpile      = []
     @fields         = []
     @jobs           = {}
 
-    @neighbors      = []
     @shire          = Object.new
+    
+    @comm_modifier = 0
   end
 
   def tick
@@ -29,5 +28,9 @@ class Village
 
   def avg(attribute)
     @citizens.map(&attribute).reduce(:+) / @citizens.count
+  end
+
+  def comm_range
+    super + comm_modifier
   end
 end
