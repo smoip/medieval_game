@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activesupport'
 gem 'celluloid'
+gem 'chunky_png'
 
 group :development, :test do
   gem 'pry', :require => false
