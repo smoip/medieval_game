@@ -2,9 +2,9 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'calendar'
-require 'citizen'
+# require 'citizen'
 require 'village'
-require 'family'
+# require 'family'
 
 class MedievalGame
   include Celluloid::Internals::Logger
@@ -50,25 +50,25 @@ if $PROGRAM_NAME == __FILE__
       end
     end
     game.villages.each do |village|
-      results.report("init citizens:") do
-        (number_of_families).times do
-          family = Family.new(
-            head: Citizen.new,
-            next_in_line: Citizen.new,
-            members: [
-              Citizen.new(age: 14),
-              Citizen.new(age: 14),
-              Citizen.new(age: 14),
-              Citizen.new(age: 14)]
-          )
-          family.fields = [
-            Field.new(acres: 7),
-            Field.new(acres: 7),
-            Field.new(acres: 7),
-          ]
-          village.families << family
-        end
-      end
+      # results.report("init citizens:") do
+      #   (number_of_families).times do
+      #     family = Family.new(
+      #       head: Citizen.new,
+      #       next_in_line: Citizen.new,
+      #       members: [
+      #         Citizen.new(age: 14),
+      #         Citizen.new(age: 14),
+      #         Citizen.new(age: 14),
+      #         Citizen.new(age: 14)]
+      #     )
+      #     family.fields = [
+      #       Field.new(acres: 7),
+      #       Field.new(acres: 7),
+      #       Field.new(acres: 7),
+      #     ]
+      #     village.families << family
+      #   end
+      # end
     end
     1.upto(52) do |i|
       results.report("week #{i}:") do
